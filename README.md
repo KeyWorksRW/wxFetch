@@ -24,6 +24,6 @@ You can use this repository as a wxWidgets dependency by placing the following i
     FetchContent_MakeAvailable( wxWidgets )
 ```
 
-Alternatively, this can be added as a submodule or subtree to your own project. The one downside is that `FetchContent_Declare` will stay current with changes in this repository (unless you set FETCHCONTENT_UPDATES_DISCONNECTED), whereas submodule/subtrees have to be manually updated.
+Alternatively, this can be added as a submodule or subtree to your own project. The one downside is that `FetchContent_Declare` will stay current with changes in this repository (unless you set FETCHCONTENT_UPDATES_DISCONNECTED). A submodule or subtree will have to be manually updated (which means you get to choose when to update).
 
 See the wxWidgets [README](maintain/wxReadMe.md) file for information about wxWidgets.
