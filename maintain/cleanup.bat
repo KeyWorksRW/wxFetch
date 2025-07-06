@@ -56,7 +56,6 @@ if exist ".\mkinstalldirs" del ".\mkinstalldirs"
 if exist ".\regen" del ".\regen"
 if exist ".\README-GIT.md" del ".\README-GIT.md"
 
-for /r %%f in (*.ac) do del /q "%%f"
 for /r %%f in (*.m4) do del /q "%%f"
 for /r %%f in (*.mk) do del /q "%%f"
 for /r %%f in (*.mms) do del /q "%%f"
