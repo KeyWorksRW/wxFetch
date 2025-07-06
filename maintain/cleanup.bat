@@ -61,7 +61,11 @@ if exist ".\README-GIT.md" del ".\README-GIT.md"
 
 for /r %%f in (Makefile.in) do del /q "%%f" >nul 2>&1
 
+@REM This bakefile is required for the build system, so save it and delete the rest.
+if exist "build\bakefiles\version.bkl" ren "build\bakefiles\version.bkl" "version.bkl.save" >nul 2>&1
 for /r %%f in (*.bkl) do del /q "%%f"
+if exist "build\bakefiles\version.bkl.save" ren "build\bakefiles\version.bkl.save" "version.bkl" >nul 2>&1
+
 for /r %%f in (*.gcc) do del /q "%%f"
 for /r %%f in (*.m4) do del /q "%%f"
 for /r %%f in (*.mk) do del /q "%%f"
