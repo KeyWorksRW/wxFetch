@@ -80,7 +80,9 @@ for /r %%f in (*.yml) do del /q "%%f"
 
 @REM This repository is designed to be pulled in as a dependecy, so there is no use for Visual Studio files.
 
+if exist "src\jpeg\jconfig.vc" ren "src\jpeg\jconfig.vc" "jconfig.save" >nul 2>&1
 for /r %%f in (*.vc*) do del /q "%%f"
+if exist "src\jpeg\jconfig.save" ren "src\jpeg\jconfig.save" "jconfig.vc" >nul 2>&1
 
 @REM Use our own README.md file which explains the purpose of this repositry, and
 @REM links to a copy of the wxWidgets readme file (maintain/wxREADME.md).
