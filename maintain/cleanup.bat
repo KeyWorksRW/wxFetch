@@ -23,8 +23,11 @@ if exist ".\lib" rd /s /q ".\libwh *"
 if exist ".\locale" rd /s /q ".\locale"
 if exist ".\misc" rd /s /q ".\misc"
 if exist ".\samples" rd /s /q ".\samples"
-if exist ".\utils" rd /s /q ".\utils"
 if exist ".\src\png\ci" rd /s /q ".\src\png\ci"
+if exist ".\utils\helpview" rd /s /q ".\utils\helpview"
+if exist ".\utils\hhp2cached" rd /s /q ".\utils\hhp2cached"
+if exist ".\utils\ifacecheck" rd /s /q ".\utils\ifacecheck"
+if exist ".\utils\screenshotgen" rd /s /q ".\utils\screenshotgen"
 
 @REM Wildcards are not used to avoid the risk of deleting unintended directories.
 
@@ -56,6 +59,10 @@ if exist ".\mkinstalldirs" del ".\mkinstalldirs"
 if exist ".\regen" del ".\regen"
 if exist ".\README-GIT.md" del ".\README-GIT.md"
 
+for /r %%f in (Makefile.in) do del /q "%%f" >nul 2>&1
+
+for /r %%f in (*.bkl) do del /q "%%f"
+for /r %%f in (*.gcc) do del /q "%%f"
 for /r %%f in (*.m4) do del /q "%%f"
 for /r %%f in (*.mk) do del /q "%%f"
 for /r %%f in (*.mms) do del /q "%%f"
@@ -63,6 +70,7 @@ for /r %%f in (*.mms) do del /q "%%f"
 for /r %%f in (*.pl) do del /q "%%f"
 for /r %%f in (*.py) do del /q "%%f"
 for /r %%f in (*.sh) do del /q "%%f"
+for /r %%f in (*.sln) do del /q "%%f"
 for /r %%f in (*.yaml) do del /q "%%f"
 for /r %%f in (*.yml) do del /q "%%f"
 
